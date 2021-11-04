@@ -10,6 +10,8 @@ We have 2 layers of config
 1) config.json file in FamPayProject>config
 2) DB based configuration
 
+**You'll have to add your DB creds and API related details in config.json**
+
 ####config.json
 This file has first level configs like your DB creds and your API key
 
