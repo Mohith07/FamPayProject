@@ -21,7 +21,7 @@ You don't have to create any of these tables or add thing, some values will be i
 which can be edited later as you wish
 
 1) *video_search_config* table stores the config for which we will be fetching data from youtube
-2) *api_configs* stores all the api keys, this will be helpful if you want to use multiple keys incase one key is exhausts
+2) *api_configs* stores all the api keys, this will be helpful if you want to use multiple keys incase one key quota exhausts
 
 ### APIs
 
