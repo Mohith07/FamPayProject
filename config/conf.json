@@ -1,0 +1,11 @@
+{
+  "rest_server_port": "0.0.0.0:5000",
+  "db_host": "localhost",
+  "db_username": "user",
+  "db_password": "pass",
+  "db_port": "5432",
+  "db_type":"postgres",
+  "dbssl_mode": "disable",
+  "db_name": "youtube",
+  "default_youtube_apikey": "AIzaSyC0R7_J5xnsXcyeCBj5TdzU-WpXbYX0Zjs"
+}
