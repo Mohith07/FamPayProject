@@ -48,7 +48,7 @@ func connectToDB(user, password, host, port, dbName, dbType, sslMode string, log
 	return db, nil
 }
 
-func getDBDetails() {
+func getDBDetails() (string, string, string) {
     conf := config.GetConfig();
     var host, user, pass string
     host = os.Getenv("dbhost")
@@ -63,6 +63,7 @@ func getDBDetails() {
     if pass == "" {
         pass = conf.DBPassword
     }
+    return host,user,pass
 }
 
 // GetDB for getting HM database
