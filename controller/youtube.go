@@ -43,7 +43,7 @@ func Init() {
 		response, err := call.Do()
 		if err != nil {
 			fmt.Println("error while making a call " + err.Error())
-			return
+			continue
 		}
 
 		if response.HTTPStatusCode > 400 && response.HTTPStatusCode < 500 {

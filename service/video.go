@@ -3,6 +3,7 @@ package service
 import (
 	"math"
 	"net/url"
+	"os"
 	"strconv"
 	"strings"
 	"time"
@@ -97,12 +98,16 @@ func GetAPIKeys() []model.APIConfig {
 	var apiKeys []model.APIConfig
 	clients.GetDB().Find(&apiKeys, "is_active = ?", true)
 	if len(apiKeys) == 0 {
+		defaultKey := config.GetConfig().DefaultAPIKey
+		//todo refactor and move all this to config
+		if os.Getenv("api") != "" {
+			defaultKey = os.Getenv("api")
+		}
 		apiKey := model.APIConfig{
-			BaseModel: model.BaseModel{},
-			APIKey:    config.GetConfig().DefaultAPIKey,
+			APIKey:    defaultKey,
 			IsActive:  true,
 		}
-		clients.GetDB().Save(&apiKeys)
+		clients.GetDB().Save(&apiKey)
 		apiKeys = append(apiKeys, apiKey)
 		return apiKeys
 	}
@@ -114,7 +119,7 @@ func GetVideoSearchConfig() *model.VideoSearchConfig {
 	clients.GetDB().Find(&searchConfig, "is_active = ?", true)
 	if len(searchConfig) == 0 {
 		//get default values
-		config := &model.VideoSearchConfig{
+		ytConfig := &model.VideoSearchConfig{
 			BaseModel:  model.BaseModel{},
 			Query:      "football",
 			MaxResults: 20,
@@ -122,8 +127,8 @@ func GetVideoSearchConfig() *model.VideoSearchConfig {
 			SearchType:       "video",
 			IsActive:   false,
 		}
-		clients.GetDB().Save(config)
-		return config
+		clients.GetDB().Save(ytConfig)
+		return ytConfig
 	}
 	return &searchConfig[0]
 }

@@ -16,6 +16,5 @@ func NewRouter() *echo.Echo {
 	router.GET("/list", controller.GetAllVideos)
 	router.GET("/search", controller.SearchVideos)
 
-
 	return router
 }

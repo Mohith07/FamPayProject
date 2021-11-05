@@ -10,6 +10,6 @@ COPY . ./
 
 RUN go build -o /FamPayProject
 
-EXPOSE 8080
+EXPOSE 5000
 
 CMD [ "/FamPayProject" ]
