@@ -2,7 +2,7 @@
  Project to get Youtube video descriptions and search those videos as required
 
 ### Prerequisities
-1) Postgres DB for persisting data
+1) Postgres DB for persisting data + a DB with name "youtube"
 2) Youtube Data API Key for getting data from youtube
 
 ### Adding details
@@ -11,6 +11,8 @@ We have 2 layers of config
 2) DB based configuration
 
 **You'll have to add your DB creds and API related details in config.json**
+
+**You'll also have to create a DB with the name "youtube"**
 
 #### config.json
 This file has first level configs like your DB creds and your API key
@@ -97,3 +99,12 @@ Response -
     "page": 2
 }
 ```
+
+### Docker image
+You can get the docker image by running this command - 
+
+docker pull mohith001/fampay-project
+
+You can also pass your db details and api key the following manner - 
+
+docker run -e dbhost="172.17.0.5" -e dbuser="user" -e dbpass="pass" -e api="AIzaSyDYD4I4fJHpnSvtU05lfWzGYyffbf43gZk" [image id]
