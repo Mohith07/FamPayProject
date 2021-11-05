@@ -1,31 +1,31 @@
 # FamPayProject
  Project to get Youtube video descriptions and search those videos as required
 
-###Prerequisities
+### Prerequisities
 1) Postgres DB for persisting data
 2) Youtube Data API Key for getting data from youtube
 
-###Adding details
+### Adding details
 We have 2 layers of config
 1) config.json file in FamPayProject>config
 2) DB based configuration
 
 **You'll have to add your DB creds and API related details in config.json**
 
-####config.json
+#### config.json
 This file has first level configs like your DB creds and your API key
 
-####DB config
+#### DB config
 
 You don't have to create any of these tables or add thing, some values will be inserted by default on the first run
 which can be edited later as you wish
 
 1) *video_search_config* table stores the config for which we will be fetching data from youtube
-2) *api_configs* stores all the api keys, this will be helpful if you want to use multiple keys incase one key is exhausts
+2) *api_configs* stores all the api keys, this will be helpful if you want to use multiple keys incase one key quota exhausts
 
-###APIs
+### APIs
 
-####Get all
+#### Get all
 URL - http://localhost:5000/list
 
 Method - GET
@@ -69,7 +69,7 @@ Response -
 }
 ```
 
-####Search
+#### Smart Search
 URL - http://localhost:5000/search
 
 Method - GET

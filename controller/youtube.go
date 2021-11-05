@@ -46,7 +46,7 @@ func Init() {
 			continue
 		}
 
-		if response.HTTPStatusCode > 400 && response.HTTPStatusCode < 500 {
+		if response.HTTPStatusCode >= 400 && response.HTTPStatusCode < 500 {
 			log.Info("quota for the given developer key has exhausted")
 			continue
 		}
