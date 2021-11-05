@@ -124,8 +124,8 @@ func GetVideoSearchConfig() *model.VideoSearchConfig {
 			Query:      "football",
 			MaxResults: 20,
 			OrderBy:    "date",
-			SearchType:       "video",
-			IsActive:   false,
+			SearchType: "video",
+			IsActive:   true,
 		}
 		clients.GetDB().Save(ytConfig)
 		return ytConfig
